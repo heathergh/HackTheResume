@@ -16,12 +16,12 @@ app.displayContactData = (userData, targetProperty) => {
     const { firstName, lastName, email, github, location } = userData[targetProperty];
 
     const htmlToAppend = `
-    <h1>${firstName} ${lastName}</h1>
-    <ul>
-    <li>${location.city}, ${location.country}</li>
-    <li>${email}</li>
-    <li><a href=${github}>Github</a></li>
-    </ul>
+        <h1>${firstName} ${lastName}</h1>
+        <ul>
+            <li>${location.city}, ${location.country}</li>
+            <li>${email}</li>
+            <li><a href=${github}>Github</a></li>
+        </ul>
     `; 
     
     // insert basic user info into HTML element
@@ -65,7 +65,9 @@ app.displaySkillsData = (userData, targetProperty) => {
         // insert each list element into ul
         const htmlToAppend = `
             <h3>${name}</h3>
-            <ul id="skill-${index}">${skillsList}</ul>
+            <ul id="skill-${index}">
+                ${skillsList}
+            </ul>
         `;
 
         document.querySelector(`#${targetProperty}`).insertAdjacentHTML("beforeend", htmlToAppend);
